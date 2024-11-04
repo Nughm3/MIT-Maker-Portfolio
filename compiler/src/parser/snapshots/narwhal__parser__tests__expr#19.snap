@@ -1,0 +1,5 @@
+---
+source: src/parser/tests.rs
+description: "0xFF"
+---
+Int@0..4 "0xFF"

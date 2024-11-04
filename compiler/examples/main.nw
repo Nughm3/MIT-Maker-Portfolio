@@ -1,0 +1,14 @@
+import std.io;
+import foo.Foo;
+
+type String();
+
+fn fun(f: Foo) -> Foo {
+	return f;
+}
+
+fn main() {
+	let x = fun(foo.get_foo()) : Foo;
+	let name = x.name : String;
+	io.println(name);
+}

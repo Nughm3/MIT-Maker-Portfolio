@@ -1,0 +1,26 @@
+---
+source: src/parser/tests.rs
+description: "type Foo(bar: Bar, baz: Baz)"
+---
+TypeDef@0..28
+  TypeKw@0..4 "type"
+  Whitespace@4..5 " "
+  Ident@5..8 "Foo"
+  LeftParen@8..9 "("
+  AdtField@9..18
+    Ident@9..12 "bar"
+    Colon@12..13 ":"
+    Path@13..17
+      PathComponent@13..17
+        Whitespace@13..14 " "
+        Ident@14..17 "Bar"
+    Comma@17..18 ","
+  AdtField@18..27
+    Whitespace@18..19 " "
+    Ident@19..22 "baz"
+    Colon@22..23 ":"
+    Path@23..27
+      PathComponent@23..27
+        Whitespace@23..24 " "
+        Ident@24..27 "Baz"
+  RightParen@27..28 ")"

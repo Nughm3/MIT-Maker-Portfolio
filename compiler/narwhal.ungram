@@ -1,0 +1,74 @@
+File = Item*
+
+Item = Import | TypeDef | Function | Constant
+
+Import = 'import' Path ';'
+
+TypeDef = 'type' name:'ident' '(' AdtField* ')'
+AdtField = name:'ident' ':' TypeExpr ','?
+
+TypeExpr = TypeFunction | Path
+
+TypeFunction = 'fn' '(' param_ty:TypeList* ')' ( '->' return_ty:TypeExpr )?
+TypeList = TypeExpr ','?
+TypeAscription = ':' TypeExpr
+
+Function = Signature Block
+Signature = 'fn' name:'ident' '(' ParamList* ')' ( '->' return_ty:TypeExpr )?
+ParamList = name:'ident' ( ':' TypeExpr )? ','?
+
+Constant = 'const' name:'ident' '=' Expr TypeAscription? ';'
+
+Block = '{' Stmt* '}'
+
+Stmt =
+  ';'
+| StmtExpr
+| StmtLet
+| StmtLoop
+| StmtWhile
+| StmtBreak
+| StmtContinue
+| StmtReturn
+| Item
+
+StmtExpr = Expr ';'?
+StmtLet = 'let' name:'ident' '=' Expr TypeAscription? ';'
+StmtLoop = 'loop' Block
+StmtWhile = 'while' Expr Block
+StmtBreak = 'break' ';'
+StmtContinue = 'continue' ';'
+StmtReturn = 'return' Expr? ';'
+
+Expr =
+  Block
+| ExprIf
+| ExprParen
+| ExprPrefix
+| ExprInfix
+| ExprAssign
+| ExprCall
+| ExprClosure
+| Atom
+| Path
+
+ExprIf = 'if' Expr then_branch:Block ( 'else' else_branch:ExprElse )?
+ExprElse = Block | ExprIf
+ExprParen = '(' Expr ')'
+ExprPrefix = PrefixOp Expr
+ExprInfix = lhs:Expr InfixOp rhs:Expr
+ExprAssign = lhs:Expr AssignOp rhs:Expr
+ExprCall = Expr '(' args:ExprList* ')'
+ExprClosure = 'fn' '(' ParamList* ')' ( '->' return_ty:TypeExpr )? Expr
+ExprList = Expr ','?
+
+InfixOp =
+  '+' | '-' | '*' | '/' | '%'
+| '==' | '!=' | '<' | '<=' | '>' | '>='
+| 'and' | 'or'
+AssignOp = '=' | '+=' | '-=' | '*=' | '/=' | '%='
+PrefixOp = '-' | 'not'
+
+Path = absolute:'package'? PathComponent*
+PathComponent = '.'? name:'ident'
+Atom = 'true' | 'false' | 'int' | 'float' | 'char' | 'string' 

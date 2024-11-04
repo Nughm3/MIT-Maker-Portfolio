@@ -1,0 +1,5 @@
+---
+source: src/parser/tests.rs
+description: "1e5"
+---
+Float@0..3 "1e5"

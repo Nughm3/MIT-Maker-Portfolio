@@ -1,0 +1,14 @@
+---
+source: src/parser/tests.rs
+description: x + y
+---
+ExprInfix@0..5
+  Path@0..1
+    PathComponent@0..1
+      Ident@0..1 "x"
+  Whitespace@1..2 " "
+  Plus@2..3 "+"
+  Path@3..5
+    PathComponent@3..5
+      Whitespace@3..4 " "
+      Ident@4..5 "y"

@@ -1,0 +1,5 @@
+{% if started && !ended %}
+<button hx-post="/admin/sessions?id={{ id }}&action=end" hx-swap="outerHTML">End</button>
+{% else %}
+N/A
+{% endif %}

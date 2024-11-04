@@ -1,0 +1,73 @@
+<nav class="navbar">
+  <ul>
+    <li>
+      <a href="/" class="secondary">
+        <img src="/static/gavel.svg" class="logo" />
+        <strong class="title">Online Judge</strong>
+      </a>
+    </li>
+  </ul>
+
+  <ul>
+    {% if let Some(info) = contest_info %}
+    <a href="/contest/{{ info.session_id }}" class="secondary">
+      {{ info.name }}
+      {% if info.end.is_some() %}
+      <strong>&nbsp;<span id="time-left"></span></strong>
+      {% endif %}
+    </a>
+    {% endif %}
+  </ul>
+
+  <ul>
+    {% if let Some(user) = user %}
+    <li>Logged in as <strong>{{ user.username() }}</strong></li>
+    {% if admin %}
+    <li><a href="/admin" role="button" class="secondary">Admin</a></li>
+    {% endif %}
+    <li><a href="/logout" role="button" onclick="return confirm('Are you sure you want to log out?')">Log out</a></li>
+    {% else %}
+    <li><a href="/login" role="button" class="secondary">Log in</a></li>
+    <li><a href="/register" role="button">Register</a></li>
+    {% endif %}
+  </ul>
+
+  {% if let Some(info) = contest_info %}
+  {% if let Some(end) = info.end %}
+  <script>
+    const end = new Date("{{ end }}");
+    const elem = document.getElementById("time-left");
+
+    const updateDuration = (duration) => {
+      function pad(num) {
+        return `${num}`.padStart(2, '0');
+      }
+
+      let asSeconds = duration / 1000;
+
+      let hours = undefined;
+      let minutes = Math.floor(asSeconds / 60);
+      let seconds = Math.floor(asSeconds % 60);
+
+      if (minutes > 59) {
+        hours = Math.floor(minutes / 60);
+        minutes %= 60;
+      }
+
+      elem.innerHTML = hours
+        ? `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`
+        : `${pad(minutes)}:${pad(seconds)}`;
+    };
+
+    updateDuration(end - Date.now());
+    const intervalId = setInterval(() => {
+      const timeLeft = end - Date.now();
+      if (timeLeft <= 0)
+        clearInterval(intervalId);
+      else
+        updateDuration(timeLeft);
+    }, 1000);
+  </script>
+  {% endif %}
+  {% endif %}
+</nav>

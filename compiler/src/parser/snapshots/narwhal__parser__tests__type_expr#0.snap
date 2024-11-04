@@ -1,0 +1,8 @@
+---
+source: src/parser/tests.rs
+description: fn()
+---
+TypeFunction@0..4
+  FnKw@0..2 "fn"
+  LeftParen@2..3 "("
+  RightParen@3..4 ")"

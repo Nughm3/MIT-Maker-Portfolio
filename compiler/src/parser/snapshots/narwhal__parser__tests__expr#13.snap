@@ -1,0 +1,45 @@
+---
+source: src/parser/tests.rs
+description: "fn(x, y, z) { return x + y + z; }"
+---
+ExprClosure@0..33
+  FnKw@0..2 "fn"
+  LeftParen@2..3 "("
+  ParamList@3..5
+    Ident@3..4 "x"
+    Comma@4..5 ","
+  ParamList@5..8
+    Whitespace@5..6 " "
+    Ident@6..7 "y"
+    Comma@7..8 ","
+  ParamList@8..10
+    Whitespace@8..9 " "
+    Ident@9..10 "z"
+  RightParen@10..11 ")"
+  Block@11..33
+    Whitespace@11..12 " "
+    LeftBrace@12..13 "{"
+    StmtReturn@13..31
+      Whitespace@13..14 " "
+      ReturnKw@14..20 "return"
+      ExprInfix@20..30
+        ExprInfix@20..26
+          Path@20..22
+            PathComponent@20..22
+              Whitespace@20..21 " "
+              Ident@21..22 "x"
+          Whitespace@22..23 " "
+          Plus@23..24 "+"
+          Path@24..26
+            PathComponent@24..26
+              Whitespace@24..25 " "
+              Ident@25..26 "y"
+        Whitespace@26..27 " "
+        Plus@27..28 "+"
+        Path@28..30
+          PathComponent@28..30
+            Whitespace@28..29 " "
+            Ident@29..30 "z"
+      Semicolon@30..31 ";"
+    Whitespace@31..32 " "
+    RightBrace@32..33 "}"

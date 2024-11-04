@@ -1,0 +1,12 @@
+---
+source: src/parser/tests.rs
+description: fn() x
+---
+ExprClosure@0..6
+  FnKw@0..2 "fn"
+  LeftParen@2..3 "("
+  RightParen@3..4 ")"
+  Path@4..6
+    PathComponent@4..6
+      Whitespace@4..5 " "
+      Ident@5..6 "x"

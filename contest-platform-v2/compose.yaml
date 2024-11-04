@@ -1,0 +1,37 @@
+name: contest-platform
+
+services:
+  judge:
+    build: 
+      context: judge
+      target: final
+    expose:
+      - "8128"
+    volumes:
+      - type: bind
+        source: ./data
+        target: /judge
+    environment:
+      RUST_LOG: trace
+    stop_signal: SIGINT
+    restart: always
+  web:
+    build:
+      context: web
+      target: final
+    ports:
+      - 3000:3000
+    depends_on:
+      - judge
+    volumes:
+      - type: bind
+        source: ./data/contests
+        target: /web/contests
+        read_only: true
+      - type: bind
+        source: ./data/data.db
+        target: /web/data.db
+    environment:
+      DATABASE_URL: data.db
+      CONTEST_DATA: contests
+    restart: always

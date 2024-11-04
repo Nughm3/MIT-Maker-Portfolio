@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Online Judge{% endblock %}
+
+{% block head %}
+<script src="https://unpkg.com/htmx.org/dist/ext/sse.js"></script>
+{% endblock %}
+
+{% block main %}
+<h1>Online Judge</h1>
+
+<p>Welcome to the online judge web interface!</p>
+
+<h6>Disclaimer</h6>
+<p>The online judge platform is currently in <strong>beta</strong>, so bugs are to be expected. Please report any issues
+  that you find!</p>
+
+<section id="contests">
+  <h2>Contests</h2>
+
+  <div hx-ext="sse" sse-connect="/sessions/sse">
+    <div hx-get="/sessions" hx-swap="innerHTML" hx-trigger="load, sse:session, every 1s"></div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,5 @@
+---
+source: src/parser/tests.rs
+description: "1.23"
+---
+Float@0..4 "1.23"

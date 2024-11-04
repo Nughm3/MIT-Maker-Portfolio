@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Leaderboard - {{ contest_name }}{% endblock %}
+
+{% block head %}
+<script src="https://unpkg.com/htmx.org/dist/ext/sse.js"></script>
+{% endblock %}
+
+{% block nav %}
+<div hx-get="/navbar?session_id={{ session_id }}" hx-trigger="load" hx-swap="outerHTML"></div>
+{% endblock %}
+
+{% block main %}
+<hgroup>
+  <h1>Leaderboard</h1>
+  <h6><a href="/contest/{{ session_id }}">{{ contest_name }}</a></h6>
+</hgroup>
+
+<div hx-ext="sse" sse-connect="/contest/{{ session_id }}/leaderboard/sse">
+  <div hx-get="/contest/{{ session_id }}/leaderboard/rankings" hx-swap="innerHTML"
+    hx-trigger="load, sse:leaderboard, every 1s"></div>
+</div>
+{% endblock %}

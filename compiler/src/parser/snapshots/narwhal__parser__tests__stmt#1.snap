@@ -1,0 +1,14 @@
+---
+source: src/parser/tests.rs
+description: a = 5;
+---
+StmtExpr@0..6
+  ExprAssign@0..5
+    Path@0..1
+      PathComponent@0..1
+        Ident@0..1 "a"
+    Whitespace@1..2 " "
+    Equals@2..3 "="
+    Whitespace@3..4 " "
+    Int@4..5 "5"
+  Semicolon@5..6 ";"

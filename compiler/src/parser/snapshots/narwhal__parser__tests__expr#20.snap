@@ -1,0 +1,5 @@
+---
+source: src/parser/tests.rs
+description: 0b1111_0000
+---
+Int@0..11 "0b1111_0000"

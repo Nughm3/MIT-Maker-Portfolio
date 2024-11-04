@@ -1,0 +1,12 @@
+---
+source: src/parser/tests.rs
+description: package.foo.bar
+---
+Path@0..15
+  PackageKw@0..7 "package"
+  PathComponent@7..11
+    Dot@7..8 "."
+    Ident@8..11 "foo"
+  PathComponent@11..15
+    Dot@11..12 "."
+    Ident@12..15 "bar"

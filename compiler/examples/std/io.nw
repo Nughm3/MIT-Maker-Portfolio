@@ -1,0 +1,5 @@
+import package.String;
+
+fn println(s: String) {
+	// TODO
+}

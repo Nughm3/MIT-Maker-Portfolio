@@ -1,0 +1,30 @@
+---
+source: src/parser/tests.rs
+description: "fn(x: Int) -> Int 2 * x"
+---
+ExprClosure@0..23
+  FnKw@0..2 "fn"
+  LeftParen@2..3 "("
+  ParamList@3..9
+    Ident@3..4 "x"
+    Colon@4..5 ":"
+    Path@5..9
+      PathComponent@5..9
+        Whitespace@5..6 " "
+        Ident@6..9 "Int"
+  RightParen@9..10 ")"
+  Whitespace@10..11 " "
+  Arrow@11..13 "->"
+  Path@13..17
+    PathComponent@13..17
+      Whitespace@13..14 " "
+      Ident@14..17 "Int"
+  ExprInfix@17..23
+    Whitespace@17..18 " "
+    Int@18..19 "2"
+    Whitespace@19..20 " "
+    Star@20..21 "*"
+    Path@21..23
+      PathComponent@21..23
+        Whitespace@21..22 " "
+        Ident@22..23 "x"

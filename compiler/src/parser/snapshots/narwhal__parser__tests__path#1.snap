@@ -1,0 +1,10 @@
+---
+source: src/parser/tests.rs
+description: bar.baz
+---
+Path@0..7
+  PathComponent@0..3
+    Ident@0..3 "bar"
+  PathComponent@3..7
+    Dot@3..4 "."
+    Ident@4..7 "baz"

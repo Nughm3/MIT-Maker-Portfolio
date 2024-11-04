@@ -1,0 +1,7 @@
+---
+source: src/parser/tests.rs
+description: continue;
+---
+StmtContinue@0..9
+  ContinueKw@0..8 "continue"
+  Semicolon@8..9 ";"

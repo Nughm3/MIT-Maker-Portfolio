@@ -1,0 +1,7 @@
+---
+source: src/parser/tests.rs
+description: "{}"
+---
+Block@0..2
+  LeftBrace@0..1 "{"
+  RightBrace@1..2 "}"

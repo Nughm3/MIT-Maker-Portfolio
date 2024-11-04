@@ -1,0 +1,7 @@
+---
+source: src/parser/tests.rs
+description: break;
+---
+StmtBreak@0..6
+  BreakKw@0..5 "break"
+  Semicolon@5..6 ";"

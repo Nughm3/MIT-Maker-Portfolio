@@ -1,0 +1,7 @@
+---
+source: src/parser/tests.rs
+description: Int
+---
+Path@0..3
+  PathComponent@0..3
+    Ident@0..3 "Int"

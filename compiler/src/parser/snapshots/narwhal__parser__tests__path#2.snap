@@ -1,0 +1,6 @@
+---
+source: src/parser/tests.rs
+description: package
+---
+Path@0..7
+  PackageKw@0..7 "package"

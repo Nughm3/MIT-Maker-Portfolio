@@ -1,0 +1,7 @@
+---
+source: src/parser/tests.rs
+description: foo
+---
+Path@0..3
+  PathComponent@0..3
+    Ident@0..3 "foo"

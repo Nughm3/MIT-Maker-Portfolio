@@ -1,0 +1,10 @@
+---
+source: src/parser/tests.rs
+description: (a)
+---
+ExprParen@0..3
+  LeftParen@0..1 "("
+  Path@1..2
+    PathComponent@1..2
+      Ident@1..2 "a"
+  RightParen@2..3 ")"

@@ -1,0 +1,21 @@
+---
+source: src/parser/tests.rs
+description: "if x { y; }"
+---
+ExprIf@0..11
+  IfKw@0..2 "if"
+  Path@2..4
+    PathComponent@2..4
+      Whitespace@2..3 " "
+      Ident@3..4 "x"
+  Block@4..11
+    Whitespace@4..5 " "
+    LeftBrace@5..6 "{"
+    StmtExpr@6..9
+      Path@6..8
+        PathComponent@6..8
+          Whitespace@6..7 " "
+          Ident@7..8 "y"
+      Semicolon@8..9 ";"
+    Whitespace@9..10 " "
+    RightBrace@10..11 "}"

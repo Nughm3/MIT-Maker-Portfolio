@@ -1,0 +1,10 @@
+---
+source: src/parser/tests.rs
+description: f()
+---
+ExprCall@0..3
+  Path@0..1
+    PathComponent@0..1
+      Ident@0..1 "f"
+  LeftParen@1..2 "("
+  RightParen@2..3 ")"

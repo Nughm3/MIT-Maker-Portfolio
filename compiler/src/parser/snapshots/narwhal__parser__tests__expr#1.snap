@@ -1,0 +1,7 @@
+---
+source: src/parser/tests.rs
+description: "-1"
+---
+ExprPrefix@0..2
+  Minus@0..1 "-"
+  Int@1..2 "1"

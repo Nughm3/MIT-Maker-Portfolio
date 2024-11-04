@@ -1,0 +1,8 @@
+---
+source: src/parser/tests.rs
+description: not false
+---
+ExprPrefix@0..9
+  NotKw@0..3 "not"
+  Whitespace@3..4 " "
+  False@4..9 "false"

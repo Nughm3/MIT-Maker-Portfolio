@@ -1,0 +1,5 @@
+---
+source: src/parser/tests.rs
+description: "\"this is a quote: \\\"\""
+---
+String@0..21 "\"this is a quote: \\\"\""

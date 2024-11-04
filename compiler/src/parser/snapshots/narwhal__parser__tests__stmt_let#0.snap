@@ -1,0 +1,13 @@
+---
+source: src/parser/tests.rs
+description: let x = 5;
+---
+StmtLet@0..10
+  LetKw@0..3 "let"
+  Whitespace@3..4 " "
+  Ident@4..5 "x"
+  Whitespace@5..6 " "
+  Equals@6..7 "="
+  Whitespace@7..8 " "
+  Int@8..9 "5"
+  Semicolon@9..10 ";"

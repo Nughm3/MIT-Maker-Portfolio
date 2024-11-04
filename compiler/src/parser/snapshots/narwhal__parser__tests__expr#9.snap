@@ -1,0 +1,19 @@
+---
+source: src/parser/tests.rs
+description: Foo(bar=baz)
+---
+ExprCall@0..12
+  Path@0..3
+    PathComponent@0..3
+      Ident@0..3 "Foo"
+  LeftParen@3..4 "("
+  ExprList@4..11
+    ExprAssign@4..11
+      Path@4..7
+        PathComponent@4..7
+          Ident@4..7 "bar"
+      Equals@7..8 "="
+      Path@8..11
+        PathComponent@8..11
+          Ident@8..11 "baz"
+  RightParen@11..12 ")"

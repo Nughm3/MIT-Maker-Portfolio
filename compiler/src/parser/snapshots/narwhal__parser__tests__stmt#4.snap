@@ -1,0 +1,7 @@
+---
+source: src/parser/tests.rs
+description: return;
+---
+StmtReturn@0..7
+  ReturnKw@0..6 "return"
+  Semicolon@6..7 ";"

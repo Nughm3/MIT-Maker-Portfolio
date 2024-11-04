@@ -1,0 +1,11 @@
+---
+source: src/parser/tests.rs
+description: return x;
+---
+StmtReturn@0..9
+  ReturnKw@0..6 "return"
+  Path@6..8
+    PathComponent@6..8
+      Whitespace@6..7 " "
+      Ident@7..8 "x"
+  Semicolon@8..9 ";"

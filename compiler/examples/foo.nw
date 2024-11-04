@@ -1,0 +1,7 @@
+import package.String;
+
+type Foo(name: String)
+
+fn get_foo() -> Foo {
+	return Foo("foo");
+}

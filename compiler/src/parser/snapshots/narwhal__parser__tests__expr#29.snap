@@ -1,0 +1,5 @@
+---
+source: src/parser/tests.rs
+description: "\"hello world\""
+---
+String@0..13 "\"hello world\""

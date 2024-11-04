@@ -1,0 +1,5 @@
+---
+source: src/parser/tests.rs
+description: "'\\0'"
+---
+Char@0..4 "'\\0'"

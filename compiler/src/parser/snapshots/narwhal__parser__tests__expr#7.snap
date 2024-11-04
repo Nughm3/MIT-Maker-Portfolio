@@ -1,0 +1,26 @@
+---
+source: src/parser/tests.rs
+description: "f(x, y, z)"
+---
+ExprCall@0..10
+  Path@0..1
+    PathComponent@0..1
+      Ident@0..1 "f"
+  LeftParen@1..2 "("
+  ExprList@2..4
+    Path@2..3
+      PathComponent@2..3
+        Ident@2..3 "x"
+    Comma@3..4 ","
+  ExprList@4..7
+    Path@4..6
+      PathComponent@4..6
+        Whitespace@4..5 " "
+        Ident@5..6 "y"
+    Comma@6..7 ","
+  ExprList@7..9
+    Path@7..9
+      PathComponent@7..9
+        Whitespace@7..8 " "
+        Ident@8..9 "z"
+  RightParen@9..10 ")"

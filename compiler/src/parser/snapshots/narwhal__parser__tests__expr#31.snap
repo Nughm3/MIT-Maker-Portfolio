@@ -1,0 +1,7 @@
+---
+source: src/parser/tests.rs
+description: i_dentifier
+---
+Path@0..11
+  PathComponent@0..11
+    Ident@0..11 "i_dentifier"

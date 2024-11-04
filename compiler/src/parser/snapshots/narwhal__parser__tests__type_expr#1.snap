@@ -1,0 +1,24 @@
+---
+source: src/parser/tests.rs
+description: "fn(Int, Int) -> Int"
+---
+TypeFunction@0..19
+  FnKw@0..2 "fn"
+  LeftParen@2..3 "("
+  TypeList@3..7
+    Path@3..6
+      PathComponent@3..6
+        Ident@3..6 "Int"
+    Comma@6..7 ","
+  TypeList@7..11
+    Path@7..11
+      PathComponent@7..11
+        Whitespace@7..8 " "
+        Ident@8..11 "Int"
+  RightParen@11..12 ")"
+  Whitespace@12..13 " "
+  Arrow@13..15 "->"
+  Path@15..19
+    PathComponent@15..19
+      Whitespace@15..16 " "
+      Ident@16..19 "Int"

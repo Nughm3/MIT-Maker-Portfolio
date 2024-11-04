@@ -1,0 +1,11 @@
+---
+source: src/parser/tests.rs
+description: import foo;
+---
+Import@0..11
+  ImportKw@0..6 "import"
+  Path@6..10
+    PathComponent@6..10
+      Whitespace@6..7 " "
+      Ident@7..10 "foo"
+  Semicolon@10..11 ";"

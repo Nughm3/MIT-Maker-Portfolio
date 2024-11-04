@@ -1,0 +1,10 @@
+---
+source: src/parser/tests.rs
+description: path.literal
+---
+Path@0..12
+  PathComponent@0..4
+    Ident@0..4 "path"
+  PathComponent@4..12
+    Dot@4..5 "."
+    Ident@5..12 "literal"

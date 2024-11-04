@@ -1,0 +1,33 @@
+---
+source: src/parser/tests.rs
+description: "fn f() {}\nconst x = 10 : Int;"
+---
+File@0..29
+  Function@0..9
+    Signature@0..6
+      FnKw@0..2 "fn"
+      Whitespace@2..3 " "
+      Ident@3..4 "f"
+      LeftParen@4..5 "("
+      RightParen@5..6 ")"
+    Block@6..9
+      Whitespace@6..7 " "
+      LeftBrace@7..8 "{"
+      RightBrace@8..9 "}"
+  Constant@9..29
+    Newlines@9..10 "\n"
+    ConstKw@10..15 "const"
+    Whitespace@15..16 " "
+    Ident@16..17 "x"
+    Whitespace@17..18 " "
+    Equals@18..19 "="
+    Whitespace@19..20 " "
+    Int@20..22 "10"
+    TypeAscription@22..28
+      Whitespace@22..23 " "
+      Colon@23..24 ":"
+      Path@24..28
+        PathComponent@24..28
+          Whitespace@24..25 " "
+          Ident@25..28 "Int"
+    Semicolon@28..29 ";"

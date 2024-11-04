@@ -1,0 +1,15 @@
+---
+source: src/parser/tests.rs
+description: "fn f() {}"
+---
+Function@0..9
+  Signature@0..6
+    FnKw@0..2 "fn"
+    Whitespace@2..3 " "
+    Ident@3..4 "f"
+    LeftParen@4..5 "("
+    RightParen@5..6 ")"
+  Block@6..9
+    Whitespace@6..7 " "
+    LeftBrace@7..8 "{"
+    RightBrace@8..9 "}"
